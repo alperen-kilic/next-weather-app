@@ -1,3 +1,5 @@
+"use client";
+
 import { SunIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
