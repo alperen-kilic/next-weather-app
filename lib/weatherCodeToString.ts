@@ -5,115 +5,115 @@ const weatherCodeToString: {
   };
 } = {
   0: {
-    icon: "c01d",
+    icon: "clear-day",
     label: "Güneşli",
   },
   1: {
-    icon: "c02d",
-    label: "Çoğunlukla Güneşli",
+    icon: "partly-cloudy-day",
+    label: "Parçalı Bulutlu",
   },
   2: {
-    icon: "c03d",
+    icon: "partly-cloudy-day",
     label: "Parçalı Bulutlu",
   },
   3: {
-    icon: "c04d",
+    icon: "cloudy",
     label: "Bulutlu",
   },
   45: {
-    icon: "s05d",
+    icon: "fog",
     label: "Sisli",
   },
   48: {
-    icon: "s05d",
+    icon: "haze",
     label: "Yoğun Sis / Kırağı",
   },
   51: {
-    icon: "d01d",
+    icon: "drizzle",
     label: "Yer Yer Yağışlı",
   },
   53: {
-    icon: "d01d",
+    icon: "drizzle",
     label: "Yer Yer Yağışlı",
   },
   55: {
-    icon: "d01d",
+    icon: "drizzle",
     label: "Yer Yer Yağışlı",
   },
   56: {
-    icon: "d01d",
+    icon: "drizzle",
     label: "Yer Yer Yağışlı",
   },
   57: {
-    icon: "d01d",
+    icon: "drizzle",
     label: "Yer Yer Yağışlı",
   },
   61: {
-    icon: "r01d",
+    icon: "rain",
     label: "Yağışlı",
   },
   63: {
-    icon: "r01d",
+    icon: "rain",
     label: "Yağışlı",
   },
   65: {
-    icon: "r01d",
+    icon: "rain",
     label: "Yağışlı",
   },
   66: {
-    icon: "f01d",
+    icon: "overcast-hail",
     label: "Yağışlı / Dolu",
   },
   67: {
-    icon: "f01d",
+    icon: "overcast-hail",
     label: "Yağışlı / Dolu",
   },
   71: {
-    icon: "s02d",
+    icon: "snow",
     label: "Kar Yağışlı",
   },
   73: {
-    icon: "s02d",
+    icon: "snow",
     label: "Kar Yağışlı",
   },
   75: {
-    icon: "s02d",
+    icon: "snow",
     label: "Kar Yağışlı",
   },
   77: {
-    icon: "s02d",
+    icon: "snow",
     label: "Kar Yağışlı",
   },
   80: {
-    icon: "r02d",
+    icon: "overcast-rain",
     label: "Sağanak Yağışlı",
   },
   81: {
-    icon: "r02d",
+    icon: "overcast-rain",
     label: "Sağanak Yağışlı",
   },
   82: {
-    icon: "r02d",
+    icon: "overcast-rain",
     label: "Sağanak Yağışlı",
   },
   85: {
-    icon: "s01d",
+    icon: "overcast-snow",
     label: "Sağanak Kar Yağışı",
   },
   86: {
-    icon: "s01d",
+    icon: "overcast-snow",
     label: "Sağanak Kar Yağışı",
   },
   95: {
-    icon: "t04d",
+    icon: "thunderstorms",
     label: "Gök Gürültülü Fırtına",
   },
   96: {
-    icon: "t04d",
+    icon: "thunderstorms",
     label: "Gök Gürültülü Fırtına",
   },
   99: {
-    icon: "t04d",
+    icon: "thunderstorms",
     label: "Gök Gürültülü Fırtına",
   },
 };
