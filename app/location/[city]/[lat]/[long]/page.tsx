@@ -1,5 +1,6 @@
 import { getClient } from "@/apollo-client";
 import CalloutCard from "@/components/CalloutCard";
+import ChatGPTCard from "@/components/ChatGPTCard";
 import HumidityChart from "@/components/HumidityChart";
 import InformationPanel from "@/components/InformationPanel";
 import RainChart from "@/components/RainChart";
@@ -64,7 +65,7 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
           </div>
 
           <div className="m-2 mb-10">
-            <CalloutCard message={"Hello"} />
+            <ChatGPTCard cleanData={dataToSend} />
           </div>
 
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 m-2">
