@@ -1,3 +1,7 @@
+export const config = {
+  runtime: "edge",
+};
+
 import { NextResponse } from "next/server";
 import openai from "@/openai";
 
