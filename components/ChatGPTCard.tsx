@@ -31,15 +31,18 @@ const ChatGPTCard = (props: Props) => {
   const [content, setContent] = useState("Yükleniyor...");
   useEffect(() => {
     const fetchGPT = async () => {
-      const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          weatherData: props.cleanData,
-        }),
-      });
+      const res = await fetch(
+        `https://chatgpt-havadurumu.vercel.app/api/getWeatherSummary`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            weatherData: props.cleanData,
+          }),
+        }
+      );
 
       const GPTdata = await res.json();
       const { content } = GPTdata;
