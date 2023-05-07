@@ -1,6 +1,5 @@
 import { getClient } from "@/apollo-client";
 import CalloutCard from "@/components/CalloutCard";
-import ChatGPTCard from "@/components/ChatGPTCard";
 import HumidityChart from "@/components/HumidityChart";
 import InformationPanel from "@/components/InformationPanel";
 import RainChart from "@/components/RainChart";
@@ -21,6 +20,8 @@ type Props = {
 };
 
 async function WeatherPage({ params: { city, lat, long } }: Props) {
+  let content =
+    "Uncomment ChatGPT part and use your own OpenAI key in .env file to use ChatGPT / Kodda yorum şeklindeki ChatGPT kısmını değiştirin ve .env dosyasında OpenAI API anahtarınızı kullanın.";
   const client = getClient();
   const { data } = await client.query({
     query: fetchWeatherQuery,
@@ -36,18 +37,18 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
 
   const dataToSend = cleanData(results, city);
 
-  const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      weatherData: dataToSend,
-    }),
-  });
+  // const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify({
+  //     weatherData: dataToSend,
+  //   }),
+  // });
 
-  const GPTdata = await res.json();
-  const { content } = GPTdata;
+  // const GPTdata = await res.json();
+  // content = GPTdata.content;
 
   return (
     <div className="flex flex-col min-h-screen md:flex-row">
