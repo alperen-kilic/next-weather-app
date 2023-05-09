@@ -47,6 +47,7 @@ const ChatGPTCard = (props: Props) => {
       }
 
       const data = response.body;
+      console.log("HELLO DATA: " + data);
       if (!data) {
         return;
       }
@@ -56,7 +57,10 @@ const ChatGPTCard = (props: Props) => {
       let done = false;
 
       while (!done) {
-        const { value, done: doneReading } = await reader.read();
+        console.log("HELLO DATA AGAIN WHILE: " + data);
+        const values = await reader.read();
+        const { value, done: doneReading } = values;
+        console.log(values);
         done = doneReading;
         const chunkValue = decoder.decode(value);
         console.log("CHUNK VALUE: " + chunkValue);

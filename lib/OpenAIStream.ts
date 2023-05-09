@@ -30,8 +30,9 @@ export async function OpenAIStream(payload: any) {
           }
           try {
             const json = JSON.parse(data);
-            const text = json.choices[0].text;
-            if (counter < 2 && (text.match(/\n/) || []).length) {
+            const text = json.choices[0].delta.content as string;
+            console.log(text);
+            if (counter < 2 && (text || []).length) {
               return;
             }
             const queue = encoder.encode(text);
@@ -50,7 +51,6 @@ export async function OpenAIStream(payload: any) {
       // https://web.dev/streams/#asynchronous-iteration
       for await (const chunk of res.body as any) {
         parser.feed(decoder.decode(chunk));
-        console.log(decoder.decode(chunk));
       }
     },
   });
