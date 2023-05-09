@@ -56,7 +56,8 @@ const ChatGPTCard = (props: Props) => {
       let done = false;
 
       while (!done) {
-        const { value, done: doneReading } = await reader.read();
+        const values = await reader.read();
+        const { value, done: doneReading } = values;
         done = doneReading;
         const chunkValue = decoder.decode(value);
         setContent((prev) => prev + chunkValue);
