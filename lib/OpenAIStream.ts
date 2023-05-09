@@ -10,7 +10,7 @@ export async function OpenAIStream(payload: any) {
 
   let counter = 0;
 
-  const res = await fetch("https://api.openai.com/v1/completions", {
+  const res = await fetch("https://api.openai.com/v1/chat/completions", {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${process.env.OPENAI_KEY ?? ""}`,
@@ -50,6 +50,7 @@ export async function OpenAIStream(payload: any) {
       // https://web.dev/streams/#asynchronous-iteration
       for await (const chunk of res.body as any) {
         parser.feed(decoder.decode(chunk));
+        console.log(decoder.decode(chunk));
       }
     },
   });

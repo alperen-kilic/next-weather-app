@@ -59,6 +59,7 @@ const ChatGPTCard = (props: Props) => {
         const { value, done: doneReading } = await reader.read();
         done = doneReading;
         const chunkValue = decoder.decode(value);
+        console.log("CHUNK VALUE: " + chunkValue);
         setContent((prev) => prev + chunkValue);
       }
     };

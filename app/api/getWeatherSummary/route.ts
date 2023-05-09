@@ -28,8 +28,20 @@ export async function POST(request: Request) {
   )}`;
 
   const payload = {
-    model: "text-davinci-003",
-    prompt,
+    model: "gpt-3.5-turbo",
+    messages: [
+      {
+        role: "system",
+        content:
+          "Canlı yayında hava durumunu sunuyor gibi davran. Kendini Alperen Kılıç olarak tanıt. Enerjik bir sunum yap. Hava durumunu sunduğun şehri bildir ve günlük hava durumunu anlat. İzleyici için anlaşılabilir bir şekilde günlük hava durumuna nasıl hazırlanabileceklerinden bahset. Veri içerisindeki uv_index verisini kullanarak UV tavsiyesinde bulun. Verilerin kullanıcıdan değil, meteoroloji ofisinden geldiğini varsay.",
+      },
+      {
+        role: "user",
+        content: `Merhaba, günlük hava durumunun özetini çıkarabilir misin? Bunu yaparken şu datayı kullan: ${JSON.stringify(
+          weatherData
+        )}`,
+      },
+    ],
     temperature: 0.7,
     max_tokens: 1000,
     n: 1,
