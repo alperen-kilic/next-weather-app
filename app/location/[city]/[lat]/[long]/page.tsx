@@ -1,5 +1,6 @@
 import { getClient } from "@/apollo-client";
 import CalloutCard from "@/components/CalloutCard";
+import ChatGPTCard from "@/components/ChatGPTCard";
 import HumidityChart from "@/components/HumidityChart";
 import InformationPanel from "@/components/InformationPanel";
 import RainChart from "@/components/RainChart";
@@ -37,19 +38,6 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
 
   const dataToSend = cleanData(results, city);
 
-  // const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify({
-  //     weatherData: dataToSend,
-  //   }),
-  // });
-
-  // const GPTdata = await res.json();
-  // content = GPTdata.content;
-
   return (
     <div className="flex flex-col min-h-screen md:flex-row">
       <InformationPanel city={city} long={long} lat={lat} results={results} />
@@ -66,7 +54,7 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
           </div>
 
           <div className="m-2 mb-10">
-            <CalloutCard message={content} />
+            <ChatGPTCard data={dataToSend} />
           </div>
 
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 m-2">
