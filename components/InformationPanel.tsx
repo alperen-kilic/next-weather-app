@@ -32,12 +32,17 @@ function InformationPanel({ city, lat, long, results }: Props) {
               year: "numeric",
               month: "long",
               day: "numeric",
+              timeZone: "Europe/Istanbul",
             })}
           </p>
 
           <p className="font-extralight">
             Saat Dilimi:{" "}
-            {Intl.DateTimeFormat("tr-TR").resolvedOptions().timeZone}
+            {
+              Intl.DateTimeFormat("tr-TR", {
+                timeZone: "Europe/Istanbul",
+              }).resolvedOptions().timeZone
+            }
           </p>
         </div>
 
@@ -46,6 +51,7 @@ function InformationPanel({ city, lat, long, results }: Props) {
             hour: "numeric",
             minute: "numeric",
             hour12: false,
+            timeZone: "Europe/Istanbul",
           })}
         </p>
       </div>
