@@ -12,7 +12,7 @@ function StatCard({ title, metric, color }: Props) {
   return (
     <Card decoration="top" decorationColor={color}>
       <Text>{title}</Text>
-      <Metric>{metric}</Metric>
+      <Metric className="text-xl md:text-3xl">{metric}</Metric>
     </Card>
   );
 }

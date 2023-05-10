@@ -14,7 +14,7 @@ function InformationPanel({ city, lat, long, results }: Props) {
   return (
     <div className="bg-gradient-to-br from-[#3D5AB8] to-[#284AA6] text-white p-10">
       <div className="pb-5">
-        <h1 className="text-6xl font-bold">{decodeURI(city)}</h1>
+        <h1 className="text-4xl md:text-6xl font-bold">{decodeURI(city)}</h1>
         <p className="text-xs text-slate-200 mt-5">
           Long/Lat: {long}, {lat}
         </p>

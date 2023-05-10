@@ -1,6 +1,5 @@
 "use client";
 
-import { SunIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
 function Loading() {
@@ -15,10 +14,10 @@ function Loading() {
         width={96}
         height={96}
       />
-      <h1 className="text-6xl font-bold text-center mb-10 animate-pulse">
+      <h1 className="text-4xl font-bold text-center mb-10 animate-pulse">
         Hava Durumu Bilgisi Yükleniyor
       </h1>
-      <h2 className="text-xl font-bold text-center mb-10 animate-pulse">
+      <h2 className="text-lg font-bold text-center mb-10 animate-pulse">
         Yapay zeka, hava durumu sunumunu hazırlarken lütfen bekleyin...
       </h2>
     </div>
